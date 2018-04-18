@@ -42,3 +42,11 @@
             </button>
         </div>
     <?php endif; ?>
+    <?php if (!empty($this->session->flashdata("registration_neutral"))): ?>
+        <div class="err_msg alert alert-primary alert-dismissible fade show mx-auto mt-3" role="alert" style = "width:50rem">
+            <strong><i class = "fa fa-check"></i></strong> <?= $this->session->flashdata("registration_neutral"); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php endif; ?>

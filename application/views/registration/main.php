@@ -91,7 +91,7 @@
             </div>
             <div class="modal-body" style = "background:#ddd;">
                 <div class="card mx-auto" style="width: 25rem;">
-                    <img id = "modal_student_picture" class="card-img-top" src="<?= base_url() ?>images/student/default.gif" alt="Card image cap">
+                    <img id = "modal_student_picture" class="card-img-top" src="<?= base_url() ?>images/student/default.gif" alt="Student Image">
                     <div class="card-body">
                         <p class="card-text" id = "modal_student_name"></p>
                         <p id = "modal_student_number"></p>
