@@ -68,9 +68,13 @@ class Registration extends CI_Controller {
         $this->registration_model->update($data, array("student_id" => $student_id));
         $result = array(
             "success" => true,
-            "text"  => $student->student_lastname.", ".$student->student_firstname." ".$student->student_middlename." has been registered at ".$student->student_registeredAt
+            "text"  => "[".date("m/d/Y G:i:s", $data["student_registeredAt"])."] : ".$student->student_lastname.", ".$student->student_firstname." ".$student->student_middlename." has been registered."
         );
+        
+        $this->session->set_flashdata("registration_success", $result["text"]);
         echo json_encode($result);
     }
+    
+    
     
 }

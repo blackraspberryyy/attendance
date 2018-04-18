@@ -5,6 +5,7 @@ class registration_model extends CI_Model {
         if (!empty($where)) {
             $this->db->where($where);
         }
+        $this->db->order_by('student_lastname', 'DESC');
         $query = $this->db->get($table);
         return ($query->num_rows() > 0 ) ? $query->result() : FALSE;
     }

@@ -1,3 +1,14 @@
+<style>
+    /*Styles here*/
+    #confirm{
+        margin-top:40px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    #modal_student_name{
+        font-weight:bold;
+    }
+</style>
 <script>
     $(document).on('click', '#confirm', function (e) {
         e.preventDefault();
@@ -12,7 +23,7 @@
                 if (result.success) {
                     remove_error("#student_number");
                     $('.modal').modal('toggle');
-                    $('#modal_student_picture').attr("src", "<?=base_url()?>images/student/"+result.student_number+".JPG");
+                    $('#modal_student_picture').attr("src", "<?= base_url() ?>images/student/" + result.student_number + ".JPG");
                     $('#modal_student_name').html(result.student_name);
                     $('#modal_student_number').html(result.student_number);
                     $('#modal_student_course').html(result.student_course);
