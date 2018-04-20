@@ -25,7 +25,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Student ID.</th>
-                                        <th scope="col">Name</th>
+                                        <th scope="col">Lastname</th>
+                                        <th scope="col">Firstname</th>
+                                        <th scope="col">Middlename</th>
                                         <th scope="col">Course</th>
                                         <th scope="col">Registered At</th>
                                         <th scope="col">Actions</th>
@@ -59,13 +61,14 @@
                                     </script>
                                     <span class = "d-none" id = "student_number_<?= $student->student_id?>" name = "student_number"><?= $student->student_id ?></span>
                                     <tr>
-                                        <td><?= $student->student_id ?></td>
-                                        <td><?= $student->student_lastname . ", " . $student->student_firstname . " " . $student->student_middlename ?></td>
+                                        <td nowrap><?= $student->student_id ?></td>
+                                        <td nowrap><?= $student->student_lastname?></td>
+                                        <td nowrap><?= $student->student_firstname?></td>
+                                        <td nowrap><?= $student->student_middlename ?></td>
                                         <td><?= $student->student_course ?></td>
-                                        <td><?= date("m/d/Y G:i:s", $student->student_registeredAt) ?></td>
+                                        <td><?= $student->student_registeredAt == 0 ? "<span class = 'text-danger'>Not Registered</span>" : date("m/d/Y G:i:s", $student->student_registeredAt) ?></td>
                                         <td class = "text-center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button class = "btn btn-primary">Print Certificate</button>
                                                 <button class = "btn btn-danger" title = "Remove Attendance" data-toggle="modal" data-target="#remove_attendance_modal_<?= $student->student_id?>"><i class = "fa fa-times"></i></button>
                                             </div>
                                         </td>

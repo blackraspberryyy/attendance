@@ -11,7 +11,7 @@ class Reports extends CI_Controller {
     public function index() {
         $data = array(
             "title"     => "Attendance",
-            "students"  => $this->registration_model->fetch("student", array("student_isPresent" => 1))
+            "students"  => $this->registration_model->fetch("student")
         );
         $this->load->view("registration/header", $data);
         $this->load->view("reports/main");

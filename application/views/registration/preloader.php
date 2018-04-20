@@ -1,7 +1,7 @@
 <style>
     /*----------------------- Preloader -----------------------*/
     body.preloader-site {
-        overflow: hidden;
+        overflow: scroll;
     }
 
     .preloader-wrapper {
