@@ -1,14 +1,15 @@
 <script>
     $(document).ready(function () {
         $('.datatable').DataTable({
-            "order": [[1, "asc"]]
+            "order": [[1, "asc"]],
+            "pageLength": 50
         });
     });
 </script>
 <div class = "container-fluid">
     <div class = "row">
         <div class = "col"></div>
-        <div class = "col-sm-10">
+        <div class = "col-sm-11">
             <div class="card mt-5">
                 <div class="card-header">
                     <i class = "fa fa-user"></i> Attendance
@@ -36,7 +37,7 @@
                                 <tbody>
                                     <?php foreach ($students as $student): ?>
                                     <script>
-                                        $(document).on('click', '#student_number_<?= $student->student_id?>', function (e) {
+                                        $(document).on('click', '#remove_attendance_<?= $student->student_id?>', function (e) {
                                             e.preventDefault();
                                             $.ajax({
                                                 "method": "POST",
@@ -66,10 +67,10 @@
                                         <td nowrap><?= $student->student_firstname?></td>
                                         <td nowrap><?= $student->student_middlename ?></td>
                                         <td><?= $student->student_course ?></td>
-                                        <td><?= $student->student_registeredAt == 0 ? "<span class = 'text-danger'>Not Registered</span>" : date("m/d/Y G:i:s", $student->student_registeredAt) ?></td>
+                                        <td nowrap><?= $student->student_registeredAt == 0 ? "<span class = 'text-danger'>Not Registered</span>" : "<span class = 'text-success'>".date("F d, Y - h:i:s A", $student->student_registeredAt)."</span>" ?></td>
                                         <td class = "text-center">
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                <button class = "btn btn-danger" title = "Remove Attendance" data-toggle="modal" data-target="#remove_attendance_modal_<?= $student->student_id?>"><i class = "fa fa-times"></i></button>
+                                                <button <?= $student->student_isPresent == 1? "" : "disabled";?> class = "btn btn-danger " title = "Remove Attendance" data-toggle="modal" data-target="#remove_attendance_modal_<?= $student->student_id?>"><i class = "fa fa-times"></i></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -95,7 +96,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                                    <button type="button" class="btn btn-danger" id = "remove_attendance">Yes</button>
+                                                    <button type="button" class="btn btn-danger" id = "remove_attendance_<?= $student->student_id?>">Yes</button>
                                                 </div>
                                             </div>
                                         </div>

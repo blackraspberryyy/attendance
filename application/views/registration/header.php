@@ -48,14 +48,14 @@
         
         <style>
             .err_msg{
-                position:absolute;
+                position:fixed;
                 z-index:20;
                 width:700px;
                 right:350px;
             }
         </style>
         <?php if (!empty($this->session->flashdata("registration_success"))): ?>
-            <div class="err_msg alert alert-success alert-dismissible fade show mx-auto mt-3" role="alert" >
+            <div class="err_msg alert alert-success alert-dismissible fade show mx-auto mt-3 fade" role="alert" >
                 <strong><i class = "fa fa-check"></i></strong> <?= $this->session->flashdata("registration_success"); ?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -63,7 +63,7 @@
             </div>
         <?php endif; ?>
         <?php if (!empty($this->session->flashdata("registration_neutral"))): ?>
-            <div class="err_msg alert alert-primary alert-dismissible fade show mx-auto mt-3" role="alert" >
+            <div class="err_msg alert alert-primary alert-dismissible fade show mx-auto mt-3 fade" role="alert" >
                 <strong><i class = "fa fa-check"></i></strong> <?= $this->session->flashdata("registration_neutral"); ?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
