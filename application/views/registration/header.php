@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title><?= $title ?></title>
-
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Custom fonts for this template-->
@@ -33,6 +32,12 @@
             }
         </script>
     </head>
+    <style>
+        body{
+            background: red; /* For browsers that do not support gradients */
+            background: linear-gradient(to bottom right, #DD614A, #413c3f); /* Standard syntax (must be last) */
+        }
+    </style>
     <body>
         <script>
             $(document).ready(function ($) {
@@ -45,9 +50,9 @@
             });
         </script>
         <?php include 'preloader.php' ?>
-        
+
         <style>
-            
+
             .err_msg{
                 position:fixed;
                 z-index:20;

@@ -62,21 +62,39 @@
     });
 </script>
 
-<div class = "container-fluid">
-    <div class = "row align-items-center"  style = "height:100vh;">
+<div class = "container-fluid content">
+    <div class="row align-items-center">
         <div class="col"></div>
-        <div class="col-sm-4 text-center" >
+        <div class="col-sm-4">
+            <img src="<?= base_url() ?>images/logo/feuheader.png" style="margin-left:-80px; " height="100"/>
+            <br><br><br>
+            <center>
+                <h1 style="color:lightgray;">"Professional Rights</h1>
+                <h3 style="color:lightgray;">and</h3>
+                <h1 style="color:lightgray;">Privileges Convention</h1>
+                <h3 style="color:lightgray;">2018"</h3>
+            </center>
+        </div>
+        <div class="col"></div>
+
+    </div>
+    <div class = "row align-items-center"  style="margin-top:305px;">
+        <div class="col"></div>
+        <div class="col-sm-4 text-center" style="margin-top:-340px;" >
+           
             <form method = "POST">
                 <div class="form-group">
-                    <label for="student_number">Student Number</label>
+                    <label for="student_number" style="color:white;">Student Number</label>
                     <input name = "student_number" maxlength="9" autofocus = "" autocomplete = "off" type="text" class="form-control" onkeypress = 'return keypresshandler(event)' id="student_number" aria-describedby="emailHelp" placeholder="Enter Student Number">
-                    <small id="emailHelp" class="form-text text-muted">Registration will be available for PROFETHICS W31 students only.</small>
+                    <small id="emailHelp" class="form-text" style="color:white">Registration will be available for PROFETHICS W31 students only.</small>
                 </div>
-                <button type="submit" id = "confirm" class="btn btn-outline-primary">Register</button>
+                <button type="submit" id = "confirm" class="btn btn-primary">Register</button>
             </form>
         </div>
         <div class="col"></div>
     </div>
+    <img src="<?= base_url() ?>images/logo/logo.png" style="margin-top:-140px; " height="150"/>
+    <img src="<?= base_url() ?>images/logo/feulogo.png" class="pull-right"  style="margin-top:-140px; " height="150"/>
 </div>
 
 <!-- CONFIRMATION MESSAGE -->

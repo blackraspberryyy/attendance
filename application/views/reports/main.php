@@ -6,10 +6,16 @@
         });
     });
 </script>
+
 <div class = "container-fluid">
+    <center>
+        <a href ="reports/generate_pdf" class="btn btn-outline-primary mt-5">Print Attendance</a>
+    </center>
     <div class = "row" >
+
         <div class = "col"></div>
         <div class = "col-sm-11" >
+
             <div class="card mt-5" >
                 <div class="card-header">
                     <i class = "fa fa-user"></i> Attendance
@@ -37,14 +43,14 @@
                                 <tbody>
                                     <?php foreach ($students as $student): ?>
                                     <script>
-                                        $(document).on('click', '#remove_attendance_<?= $student->student_id?>', function (e) {
+                                        $(document).on('click', '#remove_attendance_<?= $student->student_id ?>', function (e) {
                                             e.preventDefault();
                                             $.ajax({
                                                 "method": "POST",
                                                 "url": '<?= base_url() ?>' + "reports/remove_attendance",
                                                 "dataType": "JSON",
                                                 data: {
-                                                    student_id: $("#student_number_<?= $student->student_id?>").html()
+                                                    student_id: $("#student_number_<?= $student->student_id ?>").html()
                                                 },
                                                 success: function (result) {
                                                     if (result.success) {
@@ -60,25 +66,25 @@
                                             });
                                         });
                                     </script>
-                                    <span class = "d-none" id = "student_number_<?= $student->student_id?>" name = "student_number"><?= $student->student_id ?></span>
+                                    <span class = "d-none" id = "student_number_<?= $student->student_id ?>" name = "student_number"><?= $student->student_id ?></span>
                                     <tr>
                                         <td nowrap><?= $student->student_id ?></td>
-                                        <td nowrap><?= $student->student_lastname?></td>
-                                        <td nowrap><?= $student->student_firstname?></td>
+                                        <td nowrap><?= $student->student_lastname ?></td>
+                                        <td nowrap><?= $student->student_firstname ?></td>
                                         <td nowrap><?= $student->student_middlename ?></td>
                                         <td><?= $student->student_course ?></td>
-                                        <td nowrap><?= $student->student_registeredAt == 0 ? "<span class = 'text-danger'>Not Registered</span>" : "<span class = 'text-success'>".date("F d, Y - h:i:s A", $student->student_registeredAt)."</span>" ?></td>
+                                        <td nowrap><?= $student->student_registeredAt == 0 ? "<span class = 'text-danger'>Not Registered</span>" : "<span class = 'text-success'>" . date("F d, Y - h:i:s A", $student->student_registeredAt) . "</span>" ?></td>
                                         <td class = "text-center">
-                                            <?php if($student->student_isPresent == 1):?>
+                                            <?php if ($student->student_isPresent == 1): ?>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button class = "btn btn-danger " title = "Remove Attendance" data-toggle="modal" data-target="#remove_attendance_modal_<?= $student->student_id?>"><i class = "fa fa-times"></i></button>
+                                                    <button class = "btn btn-danger " title = "Remove Attendance" data-toggle="modal" data-target="#remove_attendance_modal_<?= $student->student_id ?>"><i class = "fa fa-times"></i></button>
                                                 </div>
-                                            <?php else:?>
-                                            --
-                                            <?php endif;?>
+                                            <?php else: ?>
+                                                --
+                                            <?php endif; ?>
                                         </td>
                                     </tr>
-                                    <div class="modal fade" id="remove_attendance_modal_<?= $student->student_id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="remove_attendance_modal_<?= $student->student_id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -100,7 +106,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                                    <button type="button" class="btn btn-danger" id = "remove_attendance_<?= $student->student_id?>">Yes</button>
+                                                    <button type="button" class="btn btn-danger" id = "remove_attendance_<?= $student->student_id ?>">Yes</button>
                                                 </div>
                                             </div>
                                         </div>
