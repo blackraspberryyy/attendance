@@ -63,9 +63,9 @@
 </script>
 
 <div class = "container-fluid">
-    <div class = "row align-items-center" style = "height:100vh;">
+    <div class = "row align-items-center"  style = "height:100vh;">
         <div class="col"></div>
-        <div class="col-sm-4 text-center">
+        <div class="col-sm-4 text-center" >
             <form method = "POST">
                 <div class="form-group">
                     <label for="student_number">Student Number</label>

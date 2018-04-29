@@ -47,6 +47,7 @@
         <?php include 'preloader.php' ?>
         
         <style>
+            
             .err_msg{
                 position:fixed;
                 z-index:20;
